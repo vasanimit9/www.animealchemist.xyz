@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     halfmoon.onDOMContentLoaded();
     fetchNews();
-  });
+  }, []);
   useEffect(() => {
     const body = document.querySelector('body');
     if (darkMode) {
@@ -31,7 +31,7 @@ const App = () => {
 
   // handlers
   const fetchNews = () => {
-    Axios.get('/api/news')
+    Axios.get('/api/news?t=' + parseInt(Date.now()/3600000))
       .then(res => res.data)
       .then(data => updateNewsList(data))
       .catch(e => console.error("Couldn't fetch news.\n", e));
@@ -49,7 +49,7 @@ const App = () => {
             style={{display: 'none'}}>
             <span className='sr-only'>
               Install
-          </span>
+            </span>
             <i className='fas fa-download'></i>
           </button>
           <button className='btn' onClick={() => updateDarkMode(!darkMode)}>

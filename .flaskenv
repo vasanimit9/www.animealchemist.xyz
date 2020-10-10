@@ -1,0 +1,3 @@
+FLASK_APP=flask/app.py
+SECRET_KEY=public_reactive_alchemy
+FLASK_ENV=development

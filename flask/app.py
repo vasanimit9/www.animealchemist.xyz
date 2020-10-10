@@ -1,7 +1,8 @@
 from flask import Flask
+import os
 
 app = Flask(__name__, static_folder='../build', static_url_path='/')
-
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 @app.route('/')
 def index():

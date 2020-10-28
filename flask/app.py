@@ -24,7 +24,7 @@ def index():
 
 @app.route("/api/last_quote")
 def last_quote():
-    quotes_list = os.listdir('static/quotes')
+    quotes_list = os.listdir('./static/quotes')
     quotes_list.sort(reverse=True)
     quotes_list = filter(lambda x: x[0] != '.', quotes_list)
     url = '/static/quotes/' + next(quotes_list).split('/')[-1]
@@ -33,7 +33,7 @@ def last_quote():
 
 @app.route("/api/random_quote")
 def random_quote_api():
-    quotes_list = os.listdir('static/quotes')
+    quotes_list = os.listdir('./static/quotes')
     quotes_list.sort(reverse=True)
     quotes_list = list(filter(lambda x: x[0] != '.', quotes_list))
     url = '/static/quotes/' + random.choice(quotes_list).split('/')[-1]

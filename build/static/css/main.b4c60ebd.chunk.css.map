@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,WACE,kCACF,CAEA,YACE,mCACF","file":"main.b4c60ebd.chunk.css","sourcesContent":[".open-sans {\n  font-family: 'Open Sans', sans-serif;\n}\n\n.carter-one {\n  font-family: 'Carter One', sans-serif;\n}\n"]}

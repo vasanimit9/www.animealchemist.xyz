@@ -18,6 +18,7 @@ def app_index():
 
 
 @app.route("/")
+@app.route("/index")
 def index():
     return redirect('/app')
 

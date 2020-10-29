@@ -22,6 +22,7 @@ def index():
     return redirect('/app')
 
 
+@app.route("/service-worker.js")
 @app.route("/worker.js")
 def old_worker():
     return """

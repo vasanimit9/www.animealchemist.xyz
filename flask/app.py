@@ -29,7 +29,6 @@ def old_worker():
     return render_template('service-worker.js'), 200, {'Content-Type': 'application/javascript'}
 
 
-@app
 @app.route("/api/last_quote")
 def last_quote():
     quotes_list = os.listdir('./static/quotes')

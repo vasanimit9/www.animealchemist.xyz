@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const About = () => {
+
+  // refs
+  const installCard = useRef();
+
+  // effects 
+  useEffect(() => {
+    setInterval(() => {
+      if (window.installPWA) {
+        installCard.current.style.display = 'block';
+      } else {
+        installCard.current.style.display = 'none';
+      }
+    }, 1000);
+  }, []);
+
   return (
     <div className='container'>
       <div className='row'>
@@ -24,9 +39,9 @@ const About = () => {
       </div>
       <div
         className='row'
-        style={{ display: (window.installPWA ? 'block' : 'none') }}
+        ref={installCard}
       >
-        <div className='col-md-6 offset-md-3'>
+        <div className='col-md-6 offset-md-3' >
           <div className='card'>
             <div className='card-title'>
               Add to Home Screen

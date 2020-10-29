@@ -1,4 +1,16 @@
-let CACHE_NAME = 'xyz.animealchemist.1';
+let CACHES_TO_BE_CLEARED = [
+    'xyz.animealchemist',
+    'xyz.animealchemist.1'
+];
+
+for (let i of CACHES_TO_BE_CLEARED) {
+    caches.open(i)
+        .then(cache => {
+            cache.delete('/');
+        });
+}
+
+let CACHE_NAME = 'xyz.animealchemist.2';
 
 let URLS_TO_CACHE = [
     './',
@@ -22,6 +34,11 @@ self.addEventListener('fetch', event => {
             .then(response => {
                 if (response) {
                     return response;
+                } else {
+                    caches.open(CACHE_NAME)
+                        .then(cache => {
+                            cache.add(event.request);
+                        })
                 }
                 return fetch(event.request);
             })

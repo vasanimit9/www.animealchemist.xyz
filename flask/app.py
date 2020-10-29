@@ -19,7 +19,22 @@ def app_index():
 
 @app.route("/")
 def index():
-    return redirect('/app')
+    return """
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <script>
+                caches.open('vasanimit9.github.io.2')
+                    .then(cache => {
+                        cache.delete('/');
+                    });
+                window.location = 'app';
+                </script>
+            </head>
+            <body>
+            </body>
+        </html>
+    """
 
 
 @app.route("/api/last_quote")

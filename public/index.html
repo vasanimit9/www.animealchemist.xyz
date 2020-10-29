@@ -57,30 +57,29 @@
     }
   </script>
   <script>
-    // let deferredInstallPrompt;
+    let deferredInstallPrompt;
 
-    // window.addEventListener('beforeinstallprompt', e => {
-    //   console.log('BIP Fired');
-    //   e.preventDefault();
-    //   deferredInstallPrompt = e;
-    // });
+    window.addEventListener('beforeinstallprompt', e => {
+      console.log('BIP Fired');
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      window.installPWA = manuallyInstallPWA;
+    });
 
-    // const manuallyInstallPWA = () => {
-    //   deferredInstallPrompt.prompt();
-    //   deferredInstallPrompt.userChoice
-    //     .then(choice => {
-    //       if (choice.outcome === "accepted") {
-    //         console.log('A2HS accepted');
-    //       }
-    //       else {
-    //         console.log('A2HS rejected');
-    //       }
+    const manuallyInstallPWA = () => {
+      deferredInstallPrompt.prompt();
+      deferredInstallPrompt.userChoice
+        .then(choice => {
+          if (choice.outcome === "accepted") {
+            console.log('A2HS accepted');
+          }
+          else {
+            console.log('A2HS rejected');
+          }
 
-    //       deferredInstallPrompt = null;
-    //     });
-    // }
-
-    // window.pwa_install = manuallyInstallPWA;
+          deferredInstallPrompt = null;
+        });
+    }
   </script>
 </body>
 

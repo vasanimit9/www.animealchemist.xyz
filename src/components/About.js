@@ -17,6 +17,31 @@ const About = () => {
                 alt='portfolio'
               >
                 vasanimit9.github.io
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className='row'
+        style={{ display: (window.installPWA ? 'block' : 'none') }}
+      >
+        <div className='col-md-6 offset-md-3'>
+          <div className='card'>
+            <div className='card-title'>
+              Add to Home Screen
+            </div>
+            <p>
+              You can install this website as a PWA.<br />
+              <a
+                href='#install'
+                onClick={event => {
+                  event.preventDefault();
+                  window.installPWA();
+                }}
+                alt='install'
+              >
+                Install
               </a>
             </p>
           </div>

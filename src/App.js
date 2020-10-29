@@ -24,7 +24,7 @@ const App = () => {
       component: <News />
     },
     {
-      name: 'About',
+      name: 'More',
       icon: <i className='fas fa-info'></i>,
       component: <About />
     },
@@ -66,6 +66,7 @@ const App = () => {
   const updatePageIndex = (event, index) => {
     event.preventDefault();
     updateCPI(index);
+    updateSidebar(window.innerWidth >= 576);
   }
 
   return (

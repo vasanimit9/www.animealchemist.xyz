@@ -1,15 +1,3 @@
-let CACHES_TO_BE_CLEARED = [
-    'xyz.animealchemist',
-    'xyz.animealchemist.1'
-];
-
-for (let i of CACHES_TO_BE_CLEARED) {
-    caches.open(i)
-        .then(cache => {
-            cache.delete('/');
-        });
-}
-
 let CACHE_NAME = 'xyz.animealchemist.2';
 
 let URLS_TO_CACHE = [
@@ -34,28 +22,23 @@ self.addEventListener('fetch', event => {
             .then(response => {
                 if (response) {
                     return response;
-                } else {
-                    caches.open(CACHE_NAME)
-                        .then(cache => {
-                            cache.add(event.request);
-                        })
                 }
                 return fetch(event.request);
             })
     );
 });
 
-self.addEventListener('activate', event => {
-    let cacheWhiteList = [CACHE_NAME];
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheWhiteList.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
+self.addEventListener('activate', evt => {
+    console.log('[ServiceWorker] Activate');
+    evt.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(keyList.map(key => {
+                if (key !== CACHE_NAME) {
+                    console.log('[ServiceWorker] Removing old cache', key);
+                    return caches.delete(key);
+                }
+            }));
         })
     );
+    self.clients.claim();
 });

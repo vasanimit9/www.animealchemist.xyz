@@ -16,7 +16,7 @@ const News = () => {
 
   // functions
   const fetchNews = () => {
-    axios.get('/api/news')
+    axios.get('/api/news?t=' + Date.now())
       .then(res => res.data)
       .then(data => updateNewsList(data))
       .catch(err => console.error(err));

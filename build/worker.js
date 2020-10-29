@@ -1,4 +1,4 @@
-let CACHE_NAME = 'xyz.animealchemist';
+let CACHE_NAME = 'xyz.animealchemist.1';
 
 let URLS_TO_CACHE = [
     './',

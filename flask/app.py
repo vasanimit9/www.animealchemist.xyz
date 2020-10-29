@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, redirect
+from flask import Flask, send_from_directory, redirect, render_template
 import os
 import random
 import json
@@ -26,12 +26,7 @@ def index():
 @app.route("/service-worker.js")
 @app.route("/worker.js")
 def old_worker():
-    return """
-                caches.open('vasanimit9.github.io.2')
-                    .then(cache => {
-                        cache.delete('/');
-                    });
-    """, 200, {'Content-Type': 'application/javascript'}
+    return render_template('service-worker.js'), 200, {'Content-Type': 'application/javascript'}
 
 
 @app

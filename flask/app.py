@@ -19,24 +19,20 @@ def app_index():
 
 @app.route("/")
 def index():
+    return redirect('/app')
+
+
+@app.route("/worker.js")
+def old_worker():
     return """
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <script>
                 caches.open('vasanimit9.github.io.2')
                     .then(cache => {
                         cache.delete('/');
                     });
-                window.location = 'app';
-                </script>
-            </head>
-            <body>
-            </body>
-        </html>
-    """
+    """, 200, {'Content-Type': 'application/javascript'}
 
 
+@app
 @app.route("/api/last_quote")
 def last_quote():
     quotes_list = os.listdir('./static/quotes')

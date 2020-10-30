@@ -59,4 +59,5 @@ def install():
 
 @app.route("/favicon.ico")
 def favicon():
-    return redirect('/app/logo.png'), 200, {'Content-Type': 'image/png'}
+    return send_from_directory(os.path.join(app.root_path, '..', 'build'), 'logo.png'),\
+        200, {'Content-Type': 'image/png'}

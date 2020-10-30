@@ -27,11 +27,13 @@ const News = () => {
       <div className='row'>
         {newsList.map((news, index) => (
           <div className='col-md-4' key={index}>
-            <div className='card h-200'>
+            <div className='card'>
               <div className='card-title mb-10'>
                 {news.feed_provider}
               </div>
-              {news.title}<br />
+              <div className='h-100 mb-10 d-flex align-content-center'>
+                <span className='align-self-center align-middle'>{news.title}</span>
+              </div>
               <a href={news.link} alt='article-link'
                 target='_blank' rel='noopener noreferrer'>
                 Read

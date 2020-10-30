@@ -1,6 +1,7 @@
 let CACHES_TO_BE_CLEARED = [
     'xyz.animealchemist',
-    'xyz.animealchemist.1'
+    'xyz.animealchemist.1',
+    'xyz.animealchemist.2',
 ];
 
 for (let i of CACHES_TO_BE_CLEARED) {
@@ -10,7 +11,7 @@ for (let i of CACHES_TO_BE_CLEARED) {
         });
 }
 
-let CACHE_NAME = 'xyz.animealchemist.2';
+let CACHE_NAME = 'xyz.animealchemist.3';
 
 let URLS_TO_CACHE = [
     './',

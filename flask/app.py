@@ -55,3 +55,8 @@ def news():
 @app.route("/api/install")
 def install():
     return json.dumps(True), 200, {'Content-Type': 'application/json'}
+
+
+@app.route("/favicon.ico")
+def favicon():
+    return redirect('/app/logo.png'), 200, {'Content-Type': 'image/png'}

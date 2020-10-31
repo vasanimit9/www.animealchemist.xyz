@@ -5,13 +5,13 @@ let CACHES_TO_BE_CLEARED = [
 ];
 
 for (let i = 1; i < CACHE_VERSION; i++) {
-    CACHES_TO_BE_CLEARED += 'xyz.animealchemist.' + i;
+    CACHES_TO_BE_CLEARED += ['xyz.animealchemist.' + i];
 }
 
 for (let i of CACHES_TO_BE_CLEARED) {
     caches.open(i)
         .then(cache => {
-            cache.delete('/');
+            cache.delete('./');
         });
 }
 

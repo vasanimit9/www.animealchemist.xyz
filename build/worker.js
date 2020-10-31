@@ -1,9 +1,10 @@
+const CACHE_VERSION = 5;
+
 let CACHES_TO_BE_CLEARED = [
-    'xyz.animealchemist',
-    'xyz.animealchemist.1',
-    'xyz.animealchemist.2',
-    'xyz.animealchemist.3',
+    'xyz.animealchemist'
 ];
+
+CACHES_TO_BE_CLEARED += [...Array(CACHE_VERSION).keys()]
 
 for (let i of CACHES_TO_BE_CLEARED) {
     caches.open(i)
@@ -12,7 +13,7 @@ for (let i of CACHES_TO_BE_CLEARED) {
         });
 }
 
-let CACHE_NAME = 'xyz.animealchemist.4';
+let CACHE_NAME = 'xyz.animealchemist.' + CACHE_VERSION;
 
 let URLS_TO_CACHE = [
     './',

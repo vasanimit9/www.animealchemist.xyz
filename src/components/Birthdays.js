@@ -72,7 +72,8 @@ const Birthdays = () => {
         <div className='col-12 h-50 text-center pb-10'>
           <span style={{ fontSize: '1.6rem' }}>{props.character.name}</span>
           <br />
-          {props.character.origin}
+          {props.character.origin.split('').splice(0, 50).join('')}
+          {props.character.origin.length > 50 ? '...' : null}
         </div>
       </div>
     </div>

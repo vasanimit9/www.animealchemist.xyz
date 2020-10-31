@@ -52,9 +52,21 @@ def news():
     return app.send_static_file('news.json'), 200, {'Content-Type': 'application/json'}
 
 
-@app.route("/api/install")
-def install():
-    return json.dumps(True), 200, {'Content-Type': 'application/json'}
+@app.route("/api/birthdays/<month>/<day>")
+def birthdays(month, day):
+    try:
+        json_file = open(os.path.join(
+            app.root_path, 'static', 'birthdays.json'), 'r')
+        birthdays = json.load(json_file)
+        json_file.close()
+        return json.dumps(birthdays[month + '/' + day]), 200, {'Content-Type': 'application/json'}
+    except:
+        return json.dumps(-1), 200, {'Content-Type': 'application/json'}
+
+
+@app.route('/api/time_table')
+def time_table():
+    return app.send_static_file('schedules.json'), 200, {'Content-Type': 'application/json'}
 
 
 @app.route("/favicon.ico")

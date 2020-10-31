@@ -8,6 +8,8 @@ import Sidebar from './components/Sidebar';
 import Quotes from './components/Quotes';
 import News from './components/News';
 import About from './components/About';
+import Birthdays from './components/Birthdays'
+import EpisodeUpdates from './components/EpisodeUpdates';
 
 const App = () => {
 
@@ -22,6 +24,16 @@ const App = () => {
       name: 'News',
       icon: <i className='fas fa-newspaper'></i>,
       component: <News />
+    },
+    {
+      name: 'Birthdays',
+      icon: <i className='fas fa-birthday-cake'></i>,
+      component: <Birthdays />
+    },
+    {
+      name: 'Episode Updates',
+      icon: <i className='fas fa-tasks'></i>,
+      component: <EpisodeUpdates />
     },
     {
       name: 'More',

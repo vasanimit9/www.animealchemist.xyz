@@ -1,18 +1,15 @@
-const CACHE_VERSION = 6;
+const CACHE_VERSION = 7;
 
-let CACHES_TO_BE_CLEARED = [
+const CACHES_TO_BE_CLEARED = [
     'xyz.animealchemist'
 ];
 
 for (let i = 1; i < CACHE_VERSION; i++) {
-    CACHES_TO_BE_CLEARED += ['xyz.animealchemist.' + i];
+    CACHES_TO_BE_CLEARED.push('xyz.animealchemist.' + i);
 }
 
 for (let i of CACHES_TO_BE_CLEARED) {
-    caches.open(i)
-        .then(cache => {
-            cache.delete('./');
-        });
+    caches.delete(i);
 }
 
 let CACHE_NAME = 'xyz.animealchemist.' + CACHE_VERSION;

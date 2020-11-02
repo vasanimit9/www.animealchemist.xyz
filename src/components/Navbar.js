@@ -7,7 +7,7 @@ const Navbar = (props) => {
         <span className='sr-only'>Toggle Sidebar</span>
         <i className='fas fa-bars'></i>
       </button>
-      <span className='navbar-brand carter-one'>
+      <span className='navbar-brand carter-one m-0'>
         {props.brand}
       </span>
       <button className='btn btn-action' onClick={props.toggleDarkMode}>

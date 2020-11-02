@@ -27,7 +27,7 @@ const Quotes = (props) => {
   return (
     <div className='container'>
       <div className='row'>
-        <div className='col-md-6 offset-md-3 p-15 text-center'>
+        <div className='col-md-6 offset-md-3 p-10 text-center'>
           <img
             src={currentImg}
             alt='quote'

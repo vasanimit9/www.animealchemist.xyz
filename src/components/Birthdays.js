@@ -58,7 +58,7 @@ const Birthdays = () => {
   }
 
   const BirthdayCard = (props) => (
-    <div className='card'>
+    <div className='card m-15'>
       <div className='row'>
         <div className='col-12 text-center'>
           <img
@@ -84,7 +84,7 @@ const Birthdays = () => {
       <div className='row'>
         <div className='col-md-3 col-lg-4'></div>
         <div className='col-md-6 col-lg-4'>
-          <div className='card mx-15 text-center'>
+          <div className='card mx-10 text-center'>
             <div className='card-title mb-5'>
               Powered by&nbsp;
             <a

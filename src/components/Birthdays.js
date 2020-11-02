@@ -84,7 +84,7 @@ const Birthdays = () => {
       <div className='row'>
         <div className='col-md-3 col-lg-4'></div>
         <div className='col-md-6 col-lg-4'>
-          <div className='card mx-10 text-center'>
+          <div className='card m-10 text-center'>
             <div className='card-title mb-5'>
               Powered by&nbsp;
             <a

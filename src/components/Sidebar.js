@@ -28,6 +28,14 @@ const Sidebar = (props) => {
           </a>
         );
       })}
+      <div className='sidebar-link mt-5'>
+        <div className='custom-switch'>
+          <input type='checkbox' id='darkMode'
+            checked={props.darkModeOn}
+            onChange={props.toggleDarkMode} />
+          <label for='darkMode'>Dark Mode</label>
+        </div>
+      </div>
     </div>
   );
 }

@@ -84,12 +84,12 @@ const App = () => {
   return (
     <div className='page-wrapper with-navbar with-sidebar open-sans'>
       <Navbar
-        darkModeOn={darkModeOn}
-        toggleDarkMode={toggleDarkMode}
         toggleSidebar={toggleSidebar}
         brand={'AnimeAlchemist'}
       />
       <Sidebar
+        darkModeOn={darkModeOn}
+        toggleDarkMode={toggleDarkMode}
         pages={pages}
         currentPageIndex={currentPageIndex}
         updatePageIndex={updatePageIndex}

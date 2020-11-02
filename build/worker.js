@@ -1,4 +1,4 @@
-const CACHE_VERSION = 8;
+const CACHE_VERSION = 9;
 
 const CACHES_TO_BE_CLEARED = [
     'xyz.animealchemist'

@@ -25,7 +25,7 @@ const EpisodeUpdates = () => {
       <div className='row'>
         <div className='col-md-4'></div>
         <div className='col-md-4'>
-          <div className='card m-10 text-center'>
+          <div className='card m-15 text-center'>
             <div className='card-title'>
               Anime Updates
             </div>

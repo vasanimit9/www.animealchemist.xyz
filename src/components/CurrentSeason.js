@@ -77,7 +77,7 @@ const CurrentSeason = () => {
       <div className='row'>
         <div className='col-md-3 col-lg-4'></div>
         <div className='col-md-6 col-lg-4'>
-          <div className='card m-5 text-center'>
+          <div className='card text-center'>
             <div className='card-title'>
               Ongoing Anime
             </div>

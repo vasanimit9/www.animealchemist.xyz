@@ -26,7 +26,7 @@ const News = () => {
     <div className='container'>
       <div className='row'>
         <div className='offset-md-4 col-md-4'>
-          <div className='card m-10 text-center'>
+          <div className='card text-center'>
             <div className='card-title'>
               Anime News
             </div>

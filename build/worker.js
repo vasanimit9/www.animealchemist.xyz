@@ -1,16 +1,19 @@
-const CACHE_VERSION = 10;
 
-const CACHES_TO_BE_CLEARED = [
-    'xyz.animealchemist'
-];
-
-for (let i = 1; i < CACHE_VERSION; i++) {
-    CACHES_TO_BE_CLEARED.push('xyz.animealchemist.' + i);
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./worker.js').then(function (registration) {
+            console.log('Worker registration successful', registration.scope);
+        }, function (err) {
+            console.log('Worker registration failed', err);
+        }).catch(function (err) {
+            console.log(err);
+        });
+    });
+} else {
+    console.log('Service Worker is not supported by browser.');
 }
 
-for (let i of CACHES_TO_BE_CLEARED) {
-    caches.delete(i);
-}
+const CACHE_VERSION = 12;
 
 let CACHE_NAME = 'xyz.animealchemist.' + CACHE_VERSION;
 

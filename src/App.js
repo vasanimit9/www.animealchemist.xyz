@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import halfmoon from 'halfmoon';
 import 'halfmoon/css/halfmoon.min.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 import canUseWEBP from './webpSupport';
 import Navbar from './components/Navbar';
@@ -10,6 +11,7 @@ import News from './components/News';
 import About from './components/About';
 import Birthdays from './components/Birthdays'
 import EpisodeUpdates from './components/EpisodeUpdates';
+import CurrentSeason from './components/CurrentSeason';
 
 const App = () => {
 
@@ -34,6 +36,11 @@ const App = () => {
       name: 'Episode Updates',
       icon: <i className='fas fa-tasks'></i>,
       component: <EpisodeUpdates />
+    },
+    {
+      name: 'Current Season',
+      icon: <i className='fas fa-calendar'></i>,
+      component: <CurrentSeason />
     },
     {
       name: 'More',

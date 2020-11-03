@@ -29,6 +29,7 @@ const EpisodeUpdates = () => {
             <div className='card-title'>
               Anime Updates
             </div>
+            <hr />
             Powered by&nbsp;
             <a
               href='https://livechart.me/'
@@ -43,7 +44,7 @@ const EpisodeUpdates = () => {
       </div>
       <div className='row'>
         {updates.map((update, index) => (
-          <div className='col-md-4 col-12' key={index}>
+          <div className='col-lg-4 col-md-6 col-12' key={index}>
             <div className='row card m-15'>
               <div
                 className='col-5 d-flex align-items-center'

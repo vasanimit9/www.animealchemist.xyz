@@ -33,7 +33,7 @@ const Sidebar = (props) => {
           <input type='checkbox' id='darkMode'
             checked={props.darkModeOn}
             onChange={props.toggleDarkMode} />
-          <label for='darkMode'>Dark Mode</label>
+          <label htmlFor='darkMode'>Dark Mode</label>
         </div>
       </div>
     </div>

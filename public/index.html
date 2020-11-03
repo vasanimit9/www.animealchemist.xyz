@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Anime Love" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" />
   <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Open+Sans:wght@600&display=swap"
     rel="stylesheet">
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
@@ -41,21 +40,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('./worker.js').then(function (registration) {
-          console.log('Worker registration successful', registration.scope);
-        }, function (err) {
-          console.log('Worker registration failed', err);
-        }).catch(function (err) {
-          console.log(err);
-        });
-      });
-    } else {
-      console.log('Service Worker is not supported by browser.');
-    }
-  </script>
+  <script src='./worker.js' async></script>
   <script>
     let deferredInstallPrompt;
 

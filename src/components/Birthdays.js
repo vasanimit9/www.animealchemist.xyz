@@ -58,7 +58,7 @@ const Birthdays = () => {
   }
 
   const BirthdayCard = (props) => (
-    <div className='card m-15'>
+    <div className='card'>
       <div className='row'>
         <div className='col-12 text-center'>
           <img
@@ -69,11 +69,12 @@ const Birthdays = () => {
             alt='character'
           />
         </div>
-        <div className='col-12 h-50 text-center pb-10'>
+        <div className='col-12 h-50 text-center py-10'>
           <span style={{ fontSize: '1.6rem' }}>{props.character.name}</span>
           <br />
-          {props.character.origin.split('').splice(0, 50).join('')}
-          {props.character.origin.length > 50 ? '...' : null}
+          <div className='text-truncate w-full'>
+            {props.character.origin}
+          </div>
         </div>
       </div>
     </div>
@@ -86,15 +87,7 @@ const Birthdays = () => {
         <div className='col-md-6 col-lg-4'>
           <div className='card m-10 text-center'>
             <div className='card-title mb-5'>
-              Powered by&nbsp;
-            <a
-                href='https://www.animecharactersdatabase.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                alt='Anime Characters Database'
-              >
-                ACDB
-            </a>
+              Birthdays
             </div>
             <div className='row mb-5'>
               <div className='col-5 pr-10'>
@@ -122,6 +115,20 @@ const Birthdays = () => {
             <div className='row'>
               <div className='col-12'>
                 {birthdayList.birth_date}
+              </div>
+            </div>
+            <hr />
+            <div className='row'>
+              <div className='col-12'>
+                Powered by&nbsp;
+              <a
+                  href='https://www.animecharactersdatabase.com/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  alt='Anime Characters Database'
+                >
+                  ACDB
+              </a>
               </div>
             </div>
           </div>

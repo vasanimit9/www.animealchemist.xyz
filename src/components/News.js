@@ -25,8 +25,17 @@ const News = () => {
   return (
     <div className='container'>
       <div className='row'>
+        <div className='offset-md-4 col-md-4'>
+          <div className='card m-10 text-center'>
+            <div className='card-title'>
+              Anime News
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='row'>
         {newsList.map((news, index) => (
-          <div className='col-md-4' key={index}>
+          <div className='col-lg-4 col-md-6' key={index}>
             <div className='card'>
               <div className='card-title mb-10'>
                 {news.feed_provider}

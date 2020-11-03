@@ -69,6 +69,28 @@ def time_table():
     return app.send_static_file('schedules.json'), 200, {'Content-Type': 'application/json'}
 
 
+@app.route('/api/schedule/<day>')
+def schedule(day):
+    try:
+        json_file = open(os.path.join(
+            app.root_path, 'static', 'schedule.json'), 'r')
+        schedule = json.load(json_file)
+        json_file.close()
+        return json.dumps(schedule[day]), 200, {'Content-Type': 'application/json'}
+    except:
+        return json.dumps(-1), 200, {'Content-Type': 'application/json'}
+
+
+@app.route('/api/top')
+def top():
+    return app.send_static_file('top.json'), 200, {'Content-Type': 'application/json'}
+
+
+@app.route('/api/current_season')
+def current_season():
+    return app.send_static_file('current_season.json'), 200, {'Content-Type': 'application/json'}
+
+
 @app.route("/favicon.ico")
 def favicon():
     return send_from_directory(os.path.join(app.root_path, '..', 'build'), 'logo.png'),\

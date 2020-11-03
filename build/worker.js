@@ -13,7 +13,7 @@ if ('serviceWorker' in navigator) {
     console.log('Service Worker is not supported by browser.');
 }
 
-const CACHE_VERSION = 13;
+const CACHE_VERSION = 14;
 
 let CACHE_NAME = 'xyz.animealchemist.' + CACHE_VERSION;
 

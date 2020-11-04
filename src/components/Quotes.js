@@ -35,15 +35,16 @@ const Quotes = (props) => {
             style={{ width: '100%' }}
             className='card mx-0 mt-0 p-0 mb-10'
           />
-          <div className='w-full d-flex justify-content-between'>
+          <div className='w-full d-flex justify-content-between justify-content-md-center'>
             <button
-              className='btn w-150 btn-primary'
+              className='btn mr-10 w-150 btn-primary'
               onClick={getRandomImage}
             >
               Random <i className='fas fa-random'></i>
             </button>
+
             <a
-              className='btn w-150 btn-primary'
+              className='btn ml-10 w-150 btn-primary'
               href={convertExtToPNG(currentImg)}
               alt='download'
               rel='noopener noreferrer'
